@@ -1,0 +1,68 @@
+{% include 'admin_navigation.html' %}
+
+
+<table class="table">
+
+    <tr style="background:red;">
+        <th>S.NO</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Purpose</th>
+        <th>Action</th>
+    </tr>
+
+    <tr>
+        {% for i in data %}
+        <td>{{forloop.counter}}</td>
+        <td>{{i.full_name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.mobile}}</td>
+        <td>{{i.comment}}</td>
+        <td><a href="{% url 'delete_contact' i.id %}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-am">Delete</a></td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<div style="margin-left:40px;">
+    {% if not data %}
+    <h1>Empty Contact's</h1>
+    {% endif %}
+</div>
+
+
+<center>Feedback detail</center>
+
+
+
+
+<table class="table">
+    <tr style="bgcolor: green;">
+        <th>S.NO</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Feedback</th>
+        <th>Action</th>
+    </tr>
+    {% for i in data2 %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.full_name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.mobile}}</td>
+        <td>{{i.feedback}}</td>
+        <td><a href="{% url 'delete_feedback' i.id %}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-am">Delete</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+<div style="margin-left:40px;">
+    {% if not data2 %}
+    <h1>Empty Feedback</h1>
+    {% endif %}
+</div>
+

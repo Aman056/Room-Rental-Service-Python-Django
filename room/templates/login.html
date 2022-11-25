@@ -1,0 +1,158 @@
+<form class="box" action="" method="post">
+{% csrf_token %}
+    {% load static %}
+
+<head>
+
+    <style>
+        body{
+			margin: 0;
+			padding: 0;
+			font-family: montserrat;
+			}
+
+
+
+
+		.img{
+		background-image: url(aaa.jpg);
+
+		}
+
+
+		.box{
+			border: solid black 8px;
+			border-redius: 5px;
+			width: 400px;
+			padding: 60px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+		}
+		.box h1{
+
+			margin-top: 0px;
+
+			width: -20px;
+			color: white;
+			text-align: uppercase;
+			font-size: 50px;
+			border-bottom: solid black 5px;
+
+		}
+		input{
+			border-radius:40px;
+		}
+
+		.box input[type="text"],.box input[type="password"]{
+
+
+				border:0px;
+				font-size: 15px;
+				background: black;
+				display: block;
+				margin: 15px auto;
+				margin-left: -10px;
+				text-align: center;
+				border: 3px solid #3498db;
+				padding: 10px;
+				width: 400px;
+				outline: non;
+				color: white;
+				border-redius: 10px;
+				transition: 0.40s;
+				cursor: pointer;
+			}
+		.box input[type="submit"]
+		{		border:0;
+				font-size: 15px;
+				background: blue;
+				margin: 20px auto;
+				text-align: center;
+				border: 3px solid #2ecc71 ;
+				padding: 10px 40px;
+				width: 150px;
+				outline: non;
+				color: white;
+				border-redius: 10px;
+				transition: 0.25s;
+				cursor: pointer;
+			}
+
+		.box input[type="submit"]:hover{
+			background: #2ecc71;
+		}
+
+		.signup_link{
+			text-decoration: none;
+			font-family: montserrat;
+			font-size: 21px;
+			margin:10px;
+			padding-left:0px;
+			text-decoration: none;
+
+		}
+		.pass{
+			text-decoration: none;
+			font-align: left;
+			text-indent: 245px;
+			font-size: 20px;
+			font-family: Garmond;
+			font-color: #16E2F5;
+			font-weight: 800;
+
+			}
+
+		.link{
+			text-decoration: none;
+			color: green;
+			}
+		.link2{
+			text-decoration: none;
+			color: green;
+     </style>
+
+
+</head>
+
+<body id ="bg" style="background-image: url('{% static 'images/2.jpg' %}')">
+
+<div class="img">
+</div>
+
+
+<h1 style="color: black">Login</h1>
+<input type="text" name="uname" placeholder="User name" required>
+<input type="password" name="pswd" placeholder="Password" required>
+<div class="pass"><a class="link2"href="Forgot password.html">Forgot Password? </a></div>
+
+<input type="submit" name="" value="Login">
+<div class="signup_link">Not a member?<a class="link" href="Signup.html">Signup</a>
+
+</div>
+</body>
+</form>
+
+
+{% if error == "no" %}
+<script>
+    alert("Login Successfully")
+    window.location=('{% url 'admin_home' %}')
+</script>
+{% endif %}
+
+{% if error == "not" %}
+<script>
+    alert("User Login Successfully")
+    window.location=('{% url 'user_home' %}')
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Username Password Does not match. Try Again...")
+    window.location=('{% url 'login' %}')
+</script>
+{% endif %}

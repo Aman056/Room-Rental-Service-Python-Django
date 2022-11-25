@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>admin_navigation</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+
+
+
+	<style>
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@500&display=swap&effect=shadow-multiple|neon');
+
+
+
+	h1{
+	font-size: 50px;
+	text-align:center;
+	font-family: Segoe Script;
+
+	}
+
+
+
+
+	#abc{
+
+		font-size: 40px;
+
+		padding-right: 25px;
+		margin-top: 50px;
+		margin-right: 10px;
+	}
+	#a1{
+		display: inline-block;
+		margin-top: 9px;
+
+	}
+	#a2{
+		border: 1px solid black;
+		border: 20px;
+
+		margin-right: 10px;
+		font-family: Sans-serif;
+		text-decoration: none;
+		padding-left: 7px;
+		padding-right: 15px;
+		transition: all .2s linear;
+
+	}
+	#a2:hover{
+		background: yellow;
+		box-shadow: 0px 0px 5px 10px yellow;
+		font-weight: bold;
+		border-radius: 10px;
+
+</style>
+
+
+
+</head>
+<body>
+<div class="row" style="background-color:#ABEBC6 ;">
+	<div class="col-4" id="b1" style="background-image:url('{% static 'images/aaa.jpg' %}; background-size:100% 100%;">
+	</div>
+	<div class="col-5">
+		<h1 class="font-effect-neon">Room Rental <br> service Lucknow</h1>
+	</div>
+	<div class="col-3">
+		<i class="fab fa-whatsapp" id="abc" style="color: #25D366;"></i>
+		<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square" id="abc" style="color: #4267B2;"></i></a>
+		<i class="fas fa-envelope" id="abc" style="color: #00B2FF;"></i>
+		<i class="fab fa-twitter" id="abc" style="color: #1DA1F2;"></i>
+	</div>
+</div>
+<div class="row" style="background: skyblue;">
+	<div class="col-2"><h2>Welcome</h2></div>
+	<div class="col-10">
+		<ul style="float: right;">
+			<li id="a1"><a href="{% url 'admin_home' %}" id="a2" target="_blanck"><i class="fas fa-home" id="bh"></i>Admin Home</a></li>
+			<li id="a1"><a href="" id="a2"><i class="fas fa-info" id="bh"></i>About US</a></li>
+			<li id="a1"><a href="{% url 'view_room_admin' %}" id="a2"><i class="fas fa-info" id="bh"></i>ROOM's</a></li>
+			<li id="a1"><a href="" id="a2" target="_blank"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+			<li id="a1"><a href="{% url 'add_room' %}" id="a2" target="_blank"><i class="fas fa-sign-in-alt"></i>add room</a></li>
+			<li id="a1"><a href="{% url 'Logout' %}" id="a2"><i class="fas fa-user-plus"></i>Logout</a></li>
+			<li id="a1"><a href="{% url 'view_contact' %}"><i class="fas fa-user-plus"></i>Feedback</a></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
